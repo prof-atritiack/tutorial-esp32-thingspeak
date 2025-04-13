@@ -79,83 +79,17 @@ Na Arduino IDE:
    - A biblioteca **WiFi** já vem com o pacote do ESP32
 
 ---
+Etapa 4: Obter o Código de Exemplo
 
-## Etapa 4: Código para Envio ao ThingSpeak
+Para facilitar o uso, o código completo já está disponível neste repositório. Para obter uma cópia local, clone o repositório usando a opção disponível nesta página.
 
-- Na Arduino IDE, clique em Upload (ícone com a seta para a direita no menu superior) para carregar seu firmware na placa.
-- Quando o upload finalizar, você verá no Output a frase "Leaving...Hard resetting via RTS pin...". Isso indica que seu upload foi realizado com sucesso.
-- Abra o Serial Monitor para ver as mensagens da placa e ter certeza que sua aplicação funcionou
+Localize o arquivo .ino dentro da pasta codigo e abra-o na Arduino IDE
 
-```cpp
-#include <WiFi.h>
-#include <ThingSpeak.h>
+Atualize os dados da rede Wi-Fi e a API Key do seu canal
 
-// === Configurações de WiFi ===
-const char* ssid = "SUA_REDE_WIFI";
-const char* password = "SUA_SENHA_WIFI";
+Atualize também os valores das variáveis a serem enviadas, caso deseje enviar dados reais de sensores .ino localizado na pasta codigo usando a Arduino IDE
 
-// === Configurações do ThingSpeak ===
-WiFiClient client;
-unsigned long channelID = 1234567; // Substitua pelo seu Channel ID
-const char* writeAPIKey = "SUA_API_KEY"; // Substitua pela sua Write API Key
-
-// === Variáveis Globais ===
-float valor1;
-float valor2;
-float valor3;
-float valor4;
-
-void setup() {
-  Serial.begin(115200);
-  WiFi.begin(ssid, password);
-
-  Serial.print("Conectando ao WiFi");
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.print(".");
-  }
-  Serial.println("\nConectado!");
-
-  // Informações da conexão
-  Serial.print("Rede conectada: ");
-  Serial.println(WiFi.SSID());
-  Serial.print("Endereço IP: ");
-  Serial.println(WiFi.localIP());
-  Serial.print("MAC Address: ");
-  Serial.println(WiFi.macAddress());
-
-  Serial.println("Aguardando 2 segundos...");
-  delay(2000);
-
-  ThingSpeak.begin(client);
-}
-
-void loop() {
-  // Geração de dados aleatórios (simulados)
-  valor1 = random(100, 500) / 10.0;
-  valor2 = random(100, 500) / 10.0;
-  valor3 = random(100, 500) / 10.0;
-  valor4 = random(100, 500) / 10.0;
-
-  // Envio para os campos do ThingSpeak
-  ThingSpeak.setField(1, valor1);
-  ThingSpeak.setField(2, valor2);
-  ThingSpeak.setField(3, valor3);
-  ThingSpeak.setField(4, valor4);
-
-  int status = ThingSpeak.writeFields(channelID, writeAPIKey);
-
-  if (status == 200) {
-    Serial.println("Dados enviados com sucesso!");
-  } else {
-    Serial.print("Erro ao enviar: ");
-    Serial.println(status);
-  }
-
-  delay(15000); // Delay de 15s para respeitar o limite gratuito do ThingSpeak
-}
-```
-
+Atualize os dados de rede Wi-Fi e a API Key do seu canal
 **Nota:** Os valores utilizados neste exemplo são gerados aleatoriamente. Você pode substituí-los por leituras reais de sensores (ex: temperatura, umidade, luminosidade, etc.).
 
 ---
