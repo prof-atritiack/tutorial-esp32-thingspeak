@@ -1,33 +1,34 @@
-# 📡 Tutorial: Enviando Dados do DOIT ESP32 DEVKIT V1 ao ThingSpeak
+# 📡 Tutorial: Enviando Dados do DOIT ESP32 DEVKIT V1 ao ThingSpeak, utilizando a Arduino IDE
 
 Este guia apresenta o passo a passo para configurar seu DOIT ESP32 DEVKIT V1 e enviar dados para o ThingSpeak utilizando a biblioteca ThingSpeak. Ideal para iniciantes em projetos de IoT com foco em monitoramento remoto de dados.
 
 ---
 
-## 🧰 Requisitos
+## Requisitos
 
 - Placa DOIT ESP32 DEVKIT V1
 - Cabo micro USB
-- Arduino IDE 2 instalada e atualizada
+- Arduino IDE instalada e atualizada
 - Conta no [ThingSpeak](https://thingspeak.com/)
 - Acesso à internet via Wi-Fi
 
 > ⚠️ É altamente recomendável utilizar uma **rede Wi-Fi própria ou compartilhada via smartphone** (roteador portátil), especialmente durante testes e demonstrações. Isso evita conflitos de rede ou restrições do firewall institucional.
 >
-> 📶 **Importante:** O módulo ESP32 não se conecta a redes de 5 GHz. Se estiver usando um celular como roteador:
->
+> **Importante:** O módulo ESP32 não se conecta a redes de 5G. Se estiver usando um celular como roteador:
 > - No **iPhone**, ative a opção **Maximizar Compatibilidade** nas configurações de Acesso Pessoal.
 > - No **Android**, certifique-se de que a rede está configurada para **2.4 GHz**, não 5 GHz.
 
 ---
 
-## 🛠️ Etapa 1: Configuração da IDE Arduino
+## Etapa 1: Configuração da IDE Arduino
 
-> **Observação importante:** Nos computadores do laboratório, as placas ESP32 já estão instaladas na IDE. A seção a seguir é útil apenas para instalação em computadores pessoais.
+> **Observação importante:** Nos computadores do laboratório, as placas ESP32 já estão instaladas na IDE.
+> A seção a seguir é útil apenas para instalação em computadores pessoais.
+> Se está em um computador já configurado, pule para a seção 1.2.
 
 ### 1.1 Instalação da Placa ESP32 (apenas para uso em computadores próprios)
 
-1. Abra a Arduino IDE 2
+1. Abra a Arduino IDE
 2. Vá em **File > Preferences**
 3. No campo **"Additional Board URLs"**, adicione:
    ```
@@ -42,19 +43,20 @@ Este guia apresenta o passo a passo para configurar seu DOIT ESP32 DEVKIT V1 e e
 
 ### 1.2 Seleção da Placa, Porta e Configurações Básicas
 
-- Na IDE 2, clique em **"Select Other Board and Port"** na parte inferior direita da tela
-- Selecione a placa **DOIT ESP32 DEVKIT V1**
-- Conecte a placa ao computador via cabo USB
+- Na Arduino IDE, clique em **"Select Other Board and Port"** na parte superior da tela
+- Digite na busca "DEV ou DOIT" e selecione a placa **DOIT ESP32 DEVKIT V1**
+- Conecte a placa ao computador via cabo USB (não utilize a extensão, conecte direto na USB)
 - Selecione a porta COM correta (geralmente **COM5** nos laboratórios)
 
-Ajuste também as seguintes opções nas configurações rápidas (ícone de engrenagem no Monitor Serial):
+Ajuste também as seguintes opções nas configurações rápidas (ícone do Serial Monitor, no canto superior direito da tela):
 
 - **Velocidade do Monitor Serial**: 115200 bauds
 - **Tamanho da Fonte**: escolha um tamanho que facilite a leitura em sala (ex: 14 ou 16)
+- **Habilite a opção "Editor Quicks Suggestions"
 
 ---
 
-## 🌐 Etapa 2: Criar um Canal no ThingSpeak
+## Etapa 2: Criar um Canal no ThingSpeak
 
 1. Acesse sua conta em [ThingSpeak](https://thingspeak.com)
 2. Vá até **Channels > New Channel**
@@ -67,18 +69,22 @@ Ajuste também as seguintes opções nas configurações rápidas (ícone de eng
 
 ---
 
-## 📥 Etapa 3: Instalar Bibliotecas
+## Etapa 3: Instalar Bibliotecas
 
 Na Arduino IDE:
 
-1. Vá em **Sketch > Incluir Biblioteca > Gerenciar Bibliotecas**
+1. Clique no ícone do Library Manager (terceiro ícone no menu lateral esquerdo)
 2. Instale:
    - **ThingSpeak** (MathWorks)
    - A biblioteca **WiFi** já vem com o pacote do ESP32
 
 ---
 
-## 🧑‍💻 Etapa 4: Código para Envio ao ThingSpeak
+## Etapa 4: Código para Envio ao ThingSpeak
+
+- Na Arduino IDE, clique em Upload (ícone com a seta para a direita no menu superior) para carregar seu firmware na placa.
+- Quando o upload finalizar, você verá no Output a frase "Leaving...Hard resetting via RTS pin...". Isso indica que seu upload foi realizado com sucesso.
+- Abra o Serial Monitor para ver as mensagens da placa e ter certeza que sua aplicação funcionou
 
 ```cpp
 #include <WiFi.h>
