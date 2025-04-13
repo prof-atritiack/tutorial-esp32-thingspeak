@@ -26,7 +26,7 @@ unsigned long channelID = 0000000; // Substitua 00000 pelo seu Channel ID
 const char* writeAPIKey = "SUA WRITE API KEY"; // Substitua pela sua Write API Key
 
 // Variáveis Globais
-// Substituia pelos valores que deseja enviar ao canal ThingSpeak
+// Substitua pelos valores que deseja enviar ao canal ThingSpeak
 float valor1;
 float valor2;
 float valor3;
