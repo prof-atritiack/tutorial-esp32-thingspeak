@@ -1,14 +1,14 @@
-/********************************************************************
- * Projeto: Envio de Dados Aleatórios para ThingSpeak via ESP32     *
- * Autor: André Tritiack                                             *
- * Repositório:         *
- *                                                                  *
- * Este projeto exemplifica como conectar o ESP32 a uma rede Wi-Fi *
- * e enviar múltiplos campos (fields) para um canal do ThingSpeak. *
- *                                                                  *
- * Baseado em exemplos oficiais da biblioteca ThingSpeak,           *
- * tutoriais da Random Nerd Tutorials, e documentação da Espressif. *
- ********************************************************************/
+/***********************************************************************************
+ * Projeto: Envio de Dados Aleatórios para ThingSpeak via ESP32                    *
+ * Autor: André Tritiack                                                           *
+ * Repositório: https://github.com/prof-atritiack/tutorial-esp32-thingspeak        *
+ *                                                                                 *
+ * Este projeto exemplifica como conectar o ESP32 a uma rede Wi-Fi                 *
+ * e enviar múltiplos campos (fields) para um canal do ThingSpeak.                 *
+ *                                                                                 *
+ * Baseado em exemplos oficiais da biblioteca ThingSpeak,                          *
+ * tutoriais da Random Nerd Tutorials, e documentação da Espressif.                *
+ ***********************************************************************************/
 
 // Biblioteca já instalada
 #include <WiFi.h>
