@@ -1,4 +1,4 @@
-# 📡 Tutorial: Enviando Dados do DOIT ESP32 DEVKIT V1 ao ThingSpeak, utilizando a Arduino IDE
+## Tutorial: Enviando Dados do DOIT ESP32 DEVKIT V1 ao ThingSpeak, utilizando a Arduino IDE
 
 Este guia apresenta o passo a passo para configurar seu DOIT ESP32 DEVKIT V1 e enviar dados para o ThingSpeak utilizando a biblioteca ThingSpeak. Ideal para iniciantes em projetos de IoT com foco em monitoramento remoto de dados.
 
@@ -94,7 +94,7 @@ Atualize os dados de rede Wi-Fi e a API Key do seu canal
 
 ---
 
-## ✅ Conclusão
+## Conclusão
 
 Você aprendeu a conectar o DOIT ESP32 DEVKIT V1 ao Wi-Fi, configurar um canal no ThingSpeak e enviar múltiplos dados utilizando a biblioteca oficial. Essa base permite criar sistemas de monitoramento em tempo real e dashboards para aplicações de IoT.
 
