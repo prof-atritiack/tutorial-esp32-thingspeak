@@ -41,19 +41,22 @@ Este guia apresenta o passo a passo para configurar seu DOIT ESP32 DEVKIT V1 e e
 > ⚠️ Módulos DOIT ESP32 DEVKIT V1 podem exigir drivers para comunicação USB. Caso sua placa não apareça nas portas disponíveis, instale os drivers CP210x:  
 > [Baixar Drivers USB CP210x (Windows)](https://randomnerdtutorials.com/install-esp32-esp8266-usb-drivers-cp210x-windows/#more-148082)
 
-### 1.2 Seleção da Placa, Porta e Configurações Básicas
+### 1.2 Configurações Básicas da Arduino IDE
+
+- Ajuste as opções da IDE, no menu File ---> Preferences:
+- **Tamanho da Fonte**: escolha um tamanho que facilite a leitura em sala (ex: 14 ou 16)
+- Escolha o tema de sua preferência.
+- Habilite a opção "Editor Quicks Suggestions".
+
+### 1.3  Seleção da Placa e Porta
 
 - Na Arduino IDE, clique em **"Select Other Board and Port"** na parte superior da tela
 - Digite na busca "DEV ou DOIT" e selecione a placa **DOIT ESP32 DEVKIT V1**
 - Conecte a placa ao computador via cabo USB (não utilize a extensão, conecte direto na USB)
 - Selecione a porta COM correta (geralmente **COM5** nos laboratórios)
-
-Ajuste também as seguintes opções nas configurações rápidas (ícone do Serial Monitor, no canto superior direito da tela):
-
+- Ajuste a velocidade de comunicação do Serial Monitor (ícone do Serial Monitor, no canto superior direito da tela):
 - **Velocidade do Monitor Serial**: 115200 bauds
-- **Tamanho da Fonte**: escolha um tamanho que facilite a leitura em sala (ex: 14 ou 16)
-- **Habilite a opção "Editor Quicks Suggestions"
-
+  
 ---
 
 ## Etapa 2: Criar um Canal no ThingSpeak
@@ -79,18 +82,24 @@ Na Arduino IDE:
    - A biblioteca **WiFi** já vem com o pacote do ESP32
 
 ---
-Etapa 4: Obter o Código de Exemplo
+## Etapa 4: Obter o Código de Exemplo e Carregar na Placa
 
-Para facilitar o uso, o código completo já está disponível neste repositório. Para obter uma cópia local, clone o repositório usando a opção disponível nesta página.
+1. Para facilitar o uso, o código completo já está disponível neste repositório. Para obter uma cópia local, clone o repositório usando a opção disponível nesta página.
 
-Localize o arquivo .ino dentro da pasta codigo e abra-o na Arduino IDE
+2. Localize o arquivo .ino dentro da pasta codigo e abra-o na Arduino IDE.
 
-Atualize os dados da rede Wi-Fi e a API Key do seu canal
+3. Atualize os dados da rede Wi-Fi e a API Key do seu canal.
 
-Atualize também os valores das variáveis a serem enviadas, caso deseje enviar dados reais de sensores .ino localizado na pasta codigo usando a Arduino IDE
-
-Atualize os dados de rede Wi-Fi e a API Key do seu canal
+4. Atualize também os valores das variáveis a serem enviadas, caso deseje enviar dados reais de sensores.
 **Nota:** Os valores utilizados neste exemplo são gerados aleatoriamente. Você pode substituí-los por leituras reais de sensores (ex: temperatura, umidade, luminosidade, etc.).
+
+5. Após atualizar o código, clique em Upload (ícone de seta para a direita) para gravar o firmware na placa DOIT ESP32 DEVKIT V1
+
+6. Aguarde o código ser carregado e a mensagem "Leaving...  Hard Resetting via RTS pin..." aparecer no Output, indicando que o upload foi concluído com sucesso.
+
+7. Abra o Serial Monitor e observe as mensagens.
+
+8. Verifique as postagens sendo atualizadas no menu Private View, no ThingSpeak.
 
 ---
 
