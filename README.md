@@ -55,7 +55,7 @@ Este guia apresenta o passo a passo para configurar seu DOIT ESP32 DEVKIT V1 e e
 - Conecte a placa ao computador via cabo USB (não utilize a extensão, conecte direto na USB)
 - Selecione a porta COM correta (geralmente **COM5** nos laboratórios)
 - Ajuste a velocidade de comunicação do Serial Monitor (ícone do Serial Monitor, no canto superior direito da tela):
-- **Velocidade do Monitor Serial**: 115200 bauds
+**Velocidade do Monitor Serial**: 115200 bauds
   
 ---
 
