@@ -81,6 +81,12 @@ Na Arduino IDE:
 2. Instale:
    - **ThingSpeak** (MathWorks)
    - A biblioteca **WiFi** já vem com o pacote do ESP32
+  
+3. No VSCode com Wokwi Simulator, atualize a variável lib_deps:
+
+lib_deps =
+    adafruit/DHT sensor library@^1.4.4
+    mathworks/ThingSpeak@^2.0.0
 
 ---
 ## Etapa 4: Obter o Código de Exemplo e Carregar na Placa
