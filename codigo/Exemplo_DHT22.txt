@@ -1,0 +1,32 @@
+#include <DHT.h>
+
+#define DHT_tipo DHT22 // TIPO DE SENSOR DHT
+#define DHT_pino 25 // PINO SDA DO SENSOR
+
+DHT dht(DHT_pino, DHT_tipo);
+
+// Variáveis
+float temperatura, umidade;
+
+void setup() {  
+  Serial.begin(115200);
+  dht.begin();
+}
+
+void loop() {
+
+  // Coletando informações do sensor
+  temperatura = dht.readTemperature(); // Celsius
+  umidade = dht.readHumidity();
+  delay(2000);
+
+  Serial.print("Temperatura: ");
+  Serial.print(temperatura);
+  Serial.print(" graus Celsius - Umidade: ");
+  Serial.print(umidade);
+  Serial.println(" %");
+
+  Serial.println("");
+ 
+}
+
